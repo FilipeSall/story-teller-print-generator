@@ -207,4 +207,12 @@
   .button_container > button {
     margin: 0 12px;
   }
+
+  .print_container-font--wrapper{
+    width: 50%;
+  }
+
+  .print_container-button--wrapper{
+    width: 20%;
+  }
 }
