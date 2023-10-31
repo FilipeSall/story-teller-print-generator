@@ -1,0 +1,76 @@
+import { useState, ChangeEvent, useRef } from 'react';
+import { AiFillPrinter } from "react-icons/ai";
+import { MdCleaningServices } from "react-icons/md";
+import { useGlobalContext } from '../../CreateContext';
+import '../../App.css';
+import ThemeBtn from '../theme_btn/ThemeBtn';
+import icesvg from '../../assets/ice.svg';
+import fireSvg from '../../assets/fire.svg';
+
+function App() {
+    const [text, setText] = useState<string>('');
+    const [title, setTitle] = useState<string>("");
+    const [stories, setStories] = useState<Array<{ title: string; text: string }>>([]);
+    const { theme } = useGlobalContext();
+    const divRef = useRef(null);
+
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setText(e.target.value);
+    }
+
+    const titleHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.target.value)
+    }
+
+    const createStory = () => {
+        const newStory = { title, text };
+        setStories([...stories, newStory]);
+        setTitle('');
+        setText('');
+    }
+
+    const handleCapture = () => {
+        window.print();
+    };
+
+    const cleanPage = () => {
+        setStories([])
+    }
+
+    return (
+        <main className={`main_container ${theme === 'hot' ? 'theme_hot' : 'theme_cold'}`}>
+            {theme === 'cold' ?
+                <svg width="100" height="100" className='svg'>
+                    <image href={icesvg} x="0" y="0" width="100" height="100" />
+                </svg> :
+                <svg width="100" height="100" className='svg'>
+                    <image href={fireSvg} x="0" y="0" width="100" height="100" />
+                </svg>
+            }
+            <div className='title_container'>
+                <h1 className={`main_title ${theme === 'cold' ? 'main_title-cold' : 'main_title-hot'}`}>Olá, Letícia</h1>
+                <div className='themeBtn_container'>
+                    <ThemeBtn themeBtn='hot' />
+                    <ThemeBtn themeBtn='cold' />
+                </div>
+            </div>
+            <input type='text' onChange={titleHandleChange} value={title} placeholder='Digite o título' />
+            <textarea onChange={handleChange} value={text} placeholder='Digite a história' />
+            <button onClick={createStory} className='create_story-btn'>Criar história</button>
+            <div ref={divRef} className='print_container'>
+                <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
+                    <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
+                    <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
+                </div>
+                {stories.map((story, index) => (
+                    <div key={index} className='story_container'>
+                        <h1 className='story_title'>{story.title}</h1>
+                        <p className='story_text'>{story.text}</p>
+                    </div>
+                ))}
+            </div>
+        </main>
+    );
+}
+
+export default App;

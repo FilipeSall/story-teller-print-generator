@@ -1,0 +1,176 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  min-height: 100vh;
+  gap: 12px;
+  position: relative;
+}
+
+.title_container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2% 0 0 0;
+}
+
+.main_title {
+  font-size: 2.5rem;
+}
+
+.main_title-hot {
+  color: #002f00;
+}
+
+.main_title-cold {
+  color: #00002f;
+}
+
+.themeBtn_container {
+  display: flex;
+  width: 15%;
+  height: 5vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.theme_hot {
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+}
+
+.theme_cold {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+}
+
+.main_container>input {
+  width: 50%;
+  height: 5vh;
+}
+
+.main_container>textarea {
+  width: 50%;
+  height: 50vh;
+}
+
+.create_story-btn {
+  cursor: pointer;
+  border: none;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/*parte que gera as historias e imprime */
+
+.print_container {
+  width: 95vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fefefe;
+}
+
+.button_container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.button_container-cold {
+  background-color: #ddedf6;
+}
+
+.button_container-hot {
+  background-color: #f9d4b7;
+}
+
+.print_container-button{
+  border: none;
+  width: 5%;
+  height: 10vh;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.story_container {
+  width: 90%;
+  animation: showSlowly .5s forwards;
+  margin: 12px;
+  padding: 8px 14px;
+  border: 1px solid grey;
+}
+
+.story_text {
+  font-size: 1.5rem;
+}
+
+.story_title {
+  font-size: 2.7rem;
+}
+
+/* svgs */
+.svg {
+  pointer-events: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+@keyframes showSlowly {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media print {
+
+  .main_container>input,
+  .main_container>textarea,
+  .main_container>button,
+  .button_container,
+  .title_container,
+  svg {
+    display: none;
+  }
+
+  .print_container {
+    border: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+
+  .title_container,
+  .main_container>input,
+  .main_container>textarea {
+    width: 75%;
+  }
+
+  .create_story-btn{
+    width: 50%;
+    margin: 12px;
+  }
+
+  .svg {
+    display: none;
+  }
+
+  .button_container > button {
+    margin: 0 12px;
+  }
+}
