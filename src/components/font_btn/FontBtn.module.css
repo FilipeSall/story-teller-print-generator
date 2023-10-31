@@ -1,0 +1,12 @@
+.button{
+    width: 7%;
+    height: 5vh;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 5px;
+    padding: 4px;
+}

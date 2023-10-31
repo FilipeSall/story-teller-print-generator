@@ -51,11 +51,14 @@
 .main_container>input {
   width: 50%;
   height: 5vh;
+  border-radius: 4px;
+  border: 1px solid black;
 }
 
 .main_container>textarea {
   width: 50%;
   height: 50vh;
+  border-radius: 4px;
 }
 
 .create_story-btn {
@@ -65,6 +68,7 @@
   width: 10vw;
   border-radius: 4px;
   font-weight: bold;
+  margin: 8px;
 }
 
 /*parte que gera as historias e imprime */
@@ -80,10 +84,40 @@
   background-color: #fefefe;
 }
 
+.arial_font{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.times_font{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.courier_font{
+  font-family: cursive;
+}
+
+.roboto_font{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .button_container {
   display: flex;
-  justify-content: flex-end;
   width: 100%;
+  justify-content: space-between;
+}
+
+.print_container-font--wrapper{
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.print_container-button--wrapper{
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .button_container-cold {
@@ -96,7 +130,7 @@
 
 .print_container-button{
   border: none;
-  width: 5%;
+  width: 100%;
   height: 10vh;
   background-color: inherit;
   cursor: pointer;

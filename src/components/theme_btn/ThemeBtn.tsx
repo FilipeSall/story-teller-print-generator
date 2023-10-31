@@ -10,7 +10,7 @@ function ThemeBtn({ themeBtn }: ThemeBtn) {
     const {setTheme} = useGlobalContext();
 
     function handleClick(){
-        setTheme(themeBtn)
+        setTheme(themeBtn);
     }
     
     return (

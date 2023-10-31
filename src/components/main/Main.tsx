@@ -6,12 +6,23 @@ import '../../App.css';
 import ThemeBtn from '../theme_btn/ThemeBtn';
 import icesvg from '../../assets/ice.svg';
 import fireSvg from '../../assets/fire.svg';
+import FontBtn from '../font_btn/FontBtn';
+import arialSvg from '../../assets/arial.webp';
+import timessvg from '../../assets/times.webp';
+import timesaltsvg from '../../assets/timesAlt.webp';
+import arialaltsvg from '../../assets/arialAlt.webp';
+import courierSvg from '../../assets/courier.webp';
+import courierAltSvg from '../../assets/courierAlt.webp';
+import robotoSvg from '../../assets/roboto.webp';
+import robotoAltSvg from '../../assets/robotoAlt.webp';
+import hotface from '../../assets/hotface.webp';
+import coldface from '../../assets/coldface.webp';
 
 function App() {
     const [text, setText] = useState<string>('');
     const [title, setTitle] = useState<string>("");
     const [stories, setStories] = useState<Array<{ title: string; text: string }>>([]);
-    const { theme } = useGlobalContext();
+    const { theme, font } = useGlobalContext();
     const divRef = useRef(null);
 
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -57,10 +68,27 @@ function App() {
             <input type='text' onChange={titleHandleChange} value={title} placeholder='Digite o título' />
             <textarea onChange={handleChange} value={text} placeholder='Digite a história' />
             <button onClick={createStory} className='create_story-btn'>Criar história</button>
-            <div ref={divRef} className='print_container'>
+
+            <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font =='courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
                 <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
-                    <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
-                    <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
+                    {theme === 'cold' ? <div className='print_container-font--wrapper'>
+                        <img src={coldface}/>
+                        <FontBtn text='arial' icon={arialSvg} />
+                        <FontBtn text='times' icon={timessvg} />
+                        <FontBtn text='courier' icon={courierSvg} />
+                        <FontBtn text='roboto' icon={robotoSvg} />
+                    </div> : <div className='print_container-font--wrapper'>
+                        <img src={hotface}/>
+                        <FontBtn text='arial' icon={arialaltsvg} />
+                        <FontBtn text='times' icon={timesaltsvg} />
+                        <FontBtn text='courier' icon={courierAltSvg} />
+                        <FontBtn text='roboto' icon={robotoAltSvg} />
+                    </div>
+                    }
+                    <div className='print_container-button--wrapper'>
+                        <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
+                        <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
+                    </div>
                 </div>
                 {stories.map((story, index) => (
                     <div key={index} className='story_container'>
