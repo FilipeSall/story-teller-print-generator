@@ -22,11 +22,14 @@ function App() {
     const [text, setText] = useState<string>('');
     const [title, setTitle] = useState<string>("");
     const [stories, setStories] = useState<Array<{ title: string; text: string }>>([]);
+    const [error, setError] = useState<boolean>(false);
     const { theme, font } = useGlobalContext();
     const divRef = useRef(null);
 
+
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value);
+        setError(false);
     }
 
     const titleHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,10 +37,14 @@ function App() {
     }
 
     const createStory = () => {
-        const newStory = { title, text };
-        setStories([...stories, newStory]);
-        setTitle('');
-        setText('');
+        if (text.length > 0) {
+            const newStory = { title, text };
+            setStories([...stories, newStory]);
+            setTitle('');
+            setText('');
+        } else {
+            setError(true);
+        }
     }
 
     const handleCapture = () => {
@@ -66,19 +73,20 @@ function App() {
                 </div>
             </div>
             <input type='text' onChange={titleHandleChange} value={title} placeholder='Digite o título' />
-            <textarea onChange={handleChange} value={text} placeholder='Digite a história' />
+            <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
+            {error && <p className='error_mensage'>Esse campo precisa ser preenchido.</p>}
             <button onClick={createStory} className='create_story-btn'>Criar história</button>
 
-            <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font =='courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
+            <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font == 'courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
                 <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
                     {theme === 'cold' ? <div className='print_container-font--wrapper'>
-                        <img src={coldface}/>
+                        <img src={coldface} />
                         <FontBtn text='arial' icon={arialSvg} />
                         <FontBtn text='times' icon={timessvg} />
                         <FontBtn text='courier' icon={courierSvg} />
                         <FontBtn text='roboto' icon={robotoSvg} />
                     </div> : <div className='print_container-font--wrapper'>
-                        <img src={hotface}/>
+                        <img src={hotface} />
                         <FontBtn text='arial' icon={arialaltsvg} />
                         <FontBtn text='times' icon={timesaltsvg} />
                         <FontBtn text='courier' icon={courierAltSvg} />

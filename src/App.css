@@ -45,7 +45,6 @@
 .theme_cold {
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-
 }
 
 .main_container>input {
@@ -84,19 +83,19 @@
   background-color: #fefefe;
 }
 
-.arial_font{
+.arial_font {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.times_font{
+.times_font {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.courier_font{
+.courier_font {
   font-family: cursive;
 }
 
-.roboto_font{
+.roboto_font {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -106,14 +105,14 @@
   justify-content: space-between;
 }
 
-.print_container-font--wrapper{
+.print_container-font--wrapper {
   display: flex;
   width: 35%;
   align-items: center;
   justify-content: space-around;
 }
 
-.print_container-button--wrapper{
+.print_container-button--wrapper {
   display: flex;
   width: 10%;
   align-items: center;
@@ -128,7 +127,7 @@
   background-color: #f9d4b7;
 }
 
-.print_container-button{
+.print_container-button {
   border: none;
   width: 100%;
   height: 10vh;
@@ -141,7 +140,7 @@
   animation: showSlowly .5s forwards;
   margin: 12px;
   padding: 8px 14px;
-  border: 1px solid grey;
+  border: 1px solid rgb(82, 82, 82);
 }
 
 .story_text {
@@ -150,6 +149,11 @@
 
 .story_title {
   font-size: 2.7rem;
+}
+
+.error {
+  animation: shake 0.5s ease-in-out;
+  border: 1px solid red;
 }
 
 /* svgs */
@@ -170,6 +174,29 @@
   }
 }
 
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 
 @media print {
 
@@ -184,6 +211,7 @@
 
   .print_container {
     border: none;
+    margin-top: 1.5%;
   }
 }
 
@@ -195,7 +223,7 @@
     width: 75%;
   }
 
-  .create_story-btn{
+  .create_story-btn {
     width: 50%;
     margin: 12px;
   }
@@ -204,15 +232,15 @@
     display: none;
   }
 
-  .button_container > button {
+  .button_container>button {
     margin: 0 12px;
   }
 
-  .print_container-font--wrapper{
+  .print_container-font--wrapper {
     width: 50%;
   }
 
-  .print_container-button--wrapper{
+  .print_container-button--wrapper {
     width: 20%;
   }
 }
