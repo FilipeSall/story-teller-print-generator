@@ -37,14 +37,10 @@ function App() {
     }
 
     const createStory = () => {
-        if (text.length > 0) {
             const newStory = { title, text };
             setStories([...stories, newStory]);
             setTitle('');
             setText('');
-        } else {
-            setError(true);
-        }
     }
 
     const handleCapture = () => {
