@@ -10,3 +10,9 @@
     border-radius: 5px;
     padding: 4px;
 }
+
+@media screen and (max-width:600px) {
+    .button{
+        border: none;
+    }
+}

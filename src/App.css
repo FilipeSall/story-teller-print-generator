@@ -250,3 +250,9 @@
     width: 20%;
   }
 }
+
+@media screen and (max-width:600px) {
+  .print_container-font--wrapper {
+    width: 65%;
+  }
+}
