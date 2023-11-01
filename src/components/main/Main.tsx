@@ -65,6 +65,7 @@ function App() {
                     <image href={fireSvg} x="0" y="0" width="100" height="100" />
                 </svg>
             }
+            
             <div className='title_container'>
                 <h1 className={`main_title ${theme === 'cold' ? 'main_title-cold' : 'main_title-hot'}`}>Olá, Letícia</h1>
                 <div className='themeBtn_container'>
