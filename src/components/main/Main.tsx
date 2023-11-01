@@ -33,14 +33,19 @@ function App() {
     }
 
     const titleHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.target.value)
+        setTitle(e.target.value);
+        setError(false);
     }
 
     const createStory = () => {
+        if(title.length > 0 || text.length > 0){
             const newStory = { title, text };
             setStories([...stories, newStory]);
             setTitle('');
             setText('');
+        } else {
+            setError(true);
+        }    
     }
 
     const handleCapture = () => {
@@ -69,9 +74,9 @@ function App() {
                     <ThemeBtn themeBtn='cold' />
                 </div>
             </div>
-            <input type='text' onChange={titleHandleChange} value={title} placeholder='Digite o título' />
+            <input type='text' onChange={titleHandleChange}  className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
             <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
-            {error && <p className='error_mensage'>Esse campo precisa ser preenchido.</p>}
+            {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
             <button onClick={createStory} className='create_story-btn'>Criar história</button>
 
             <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font == 'courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
