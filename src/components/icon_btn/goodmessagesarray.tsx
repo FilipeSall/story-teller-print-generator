@@ -10,4 +10,7 @@ export  const goodVibeMessages = [
     'Você é forte e será capaz de lutar e conquistar o seu espaço.',
     'Você só precisa se manter firme e tudo dará certo.',
     'Conheça-se e seja sua porta-voz em todos os lugares que desejar estar.',
+    'Faça sempre o seu melhor e acredite que o melhor possa ser feito.',
+    'Não importa que você vá devagar, contanto que você não pare.',
+    'Descubra quem você realmente é e se aceite.'
 ]
