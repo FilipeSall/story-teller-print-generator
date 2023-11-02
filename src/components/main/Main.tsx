@@ -64,7 +64,7 @@ function App() {
     }
 
     return (
-        <main className={`main_container ${theme === 'hot' ? 'theme_hot' : 'theme_cold'}`}>
+        <main className={`main_container theme_${theme}`}>
             {theme === 'cold' ?
                 <>
                     <svg width="100" height="100" className='svg'>
@@ -77,12 +77,12 @@ function App() {
                     <svg width="100" height="100" className='svg'>
                         <image href={fireSvg} x="0" y="0" width="100" height="100" />
                     </svg>
-                    <img  className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
+                    <img className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
                 </>
             }
 
             <div className='title_container'>
-                <h1 className={`main_title ${theme === 'cold' ? 'main_title-cold' : 'main_title-hot'}`}>Olá, Letícia</h1>
+                <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
                 <div className='themeBtn_container'>
                     <ThemeBtn themeBtn='hot' />
                     <ThemeBtn themeBtn='cold' />
@@ -101,13 +101,14 @@ function App() {
                         <FontBtn text='times' icon={timessvg} />
                         <FontBtn text='courier' icon={courierSvg} />
                         <FontBtn text='roboto' icon={robotoSvg} />
-                    </div> : <div className='print_container-font--wrapper'>
-                        <IconBtn icon={hotface} />
-                        <FontBtn text='arial' icon={arialaltsvg} />
-                        <FontBtn text='times' icon={timesaltsvg} />
-                        <FontBtn text='courier' icon={courierAltSvg} />
-                        <FontBtn text='roboto' icon={robotoAltSvg} />
-                    </div>
+                    </div> :
+                        <div className='print_container-font--wrapper'>
+                            <IconBtn icon={hotface} />
+                            <FontBtn text='arial' icon={arialaltsvg} />
+                            <FontBtn text='times' icon={timesaltsvg} />
+                            <FontBtn text='courier' icon={courierAltSvg} />
+                            <FontBtn text='roboto' icon={robotoAltSvg} />
+                        </div>
                     }
                     <div className='print_container-button--wrapper'>
                         <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
