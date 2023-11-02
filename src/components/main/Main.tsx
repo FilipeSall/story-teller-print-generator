@@ -63,6 +63,8 @@ function App() {
         setStories([])
     }
 
+    
+
     return (
         <main className={`main_container theme_${theme}`}>
             {theme === 'cold' ?

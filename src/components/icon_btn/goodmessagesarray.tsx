@@ -1,6 +1,5 @@
 export  const goodVibeMessages = [
     'Tente de novo. Fracasse de novo. Mas fracasse melhor', 
-    'Pessimismo leva à fraqueza, otimismo ao poder.',
     'Um dia ruim não desfaz uma vida boa. Não desista!',
     'Vida é brisa passageira, então faça valer a pena.',
     'Definir um objetivo é o ponto de partida de toda a realização',
