@@ -17,6 +17,7 @@ import robotoSvg from '../../assets/roboto.webp';
 import robotoAltSvg from '../../assets/robotoAlt.webp';
 import hotface from '../../assets/hotface.webp';
 import coldface from '../../assets/coldface.webp';
+import IconBtn from '../icon_btn/IconBtn';
 
 function App() {
     const [text, setText] = useState<string>('');
@@ -82,13 +83,13 @@ function App() {
             <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font == 'courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
                 <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
                     {theme === 'cold' ? <div className='print_container-font--wrapper'>
-                        <img src={coldface} />
+                        <IconBtn icon={coldface}/>
                         <FontBtn text='arial' icon={arialSvg} />
                         <FontBtn text='times' icon={timessvg} />
                         <FontBtn text='courier' icon={courierSvg} />
                         <FontBtn text='roboto' icon={robotoSvg} />
                     </div> : <div className='print_container-font--wrapper'>
-                        <img src={hotface} />
+                        <IconBtn icon={hotface} />
                         <FontBtn text='arial' icon={arialaltsvg} />
                         <FontBtn text='times' icon={timesaltsvg} />
                         <FontBtn text='courier' icon={courierAltSvg} />
