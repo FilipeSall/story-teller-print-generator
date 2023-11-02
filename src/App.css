@@ -172,6 +172,16 @@
   opacity: 0.65;
 }
 
+.imagetermo{
+  position: absolute;
+  width: 80px;
+  left: 90%;
+  top: 40%;
+  opacity: 0.5;
+  transition: .3s ease-in-out;
+  filter: drop-shadow(1px 1px 3px black);
+}
+
 @keyframes showSlowly {
   0% {
     opacity: 0;
@@ -213,7 +223,8 @@
   .main_container>button,
   .button_container,
   .title_container,
-  svg {
+  svg,
+  .imagetermo {
     display: none;
   }
 
@@ -236,7 +247,7 @@
     margin: 12px;
   }
 
-  .svg {
+  .svg, .imagetermo {
     display: none;
   }
 

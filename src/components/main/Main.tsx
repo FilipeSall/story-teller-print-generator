@@ -18,6 +18,8 @@ import robotoAltSvg from '../../assets/robotoAlt.webp';
 import hotface from '../../assets/hotface.webp';
 import coldface from '../../assets/coldface.webp';
 import IconBtn from '../icon_btn/IconBtn';
+import termometrocold from '../../assets/termometrocold.svg';
+import termometrohot from '../../assets/termometrohot.svg';
 
 function App() {
     const [text, setText] = useState<string>('');
@@ -39,18 +41,18 @@ function App() {
     }
 
     const createStory = () => {
-        if(title.length > 0 || text.length > 0){
+        if (title.length > 0 || text.length > 0) {
             const newStory = { title, text };
             setStories([...stories, newStory]);
             setTitle('');
             setText('');
         } else {
             setError(true);
-        }    
+        }
     }
 
     const handleCapture = () => {
-        if(stories.length > 0){
+        if (stories.length > 0) {
             window.print();
         } else {
             setError(true);
@@ -64,14 +66,21 @@ function App() {
     return (
         <main className={`main_container ${theme === 'hot' ? 'theme_hot' : 'theme_cold'}`}>
             {theme === 'cold' ?
-                <svg width="100" height="100" className='svg'>
-                    <image href={icesvg} x="0" y="0" width="100" height="100" />
-                </svg> :
-                <svg width="100" height="100" className='svg'>
-                    <image href={fireSvg} x="0" y="0" width="100" height="100" />
-                </svg>
+                <>
+                    <svg width="100" height="100" className='svg'>
+                        <image href={icesvg} x="0" y="0" width="100" height="100" />
+                    </svg>
+                    <img className='imagetermo' src={termometrocold} alt='termometro com baixa temperatura' />
+                </>
+                :
+                <>
+                    <svg width="100" height="100" className='svg'>
+                        <image href={fireSvg} x="0" y="0" width="100" height="100" />
+                    </svg>
+                    <img  className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
+                </>
             }
-            
+
             <div className='title_container'>
                 <h1 className={`main_title ${theme === 'cold' ? 'main_title-cold' : 'main_title-hot'}`}>Olá, Letícia</h1>
                 <div className='themeBtn_container'>
@@ -79,7 +88,7 @@ function App() {
                     <ThemeBtn themeBtn='cold' />
                 </div>
             </div>
-            <input type='text' onChange={titleHandleChange}  className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
+            <input type='text' onChange={titleHandleChange} className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
             <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
             {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
             <button onClick={createStory} className='create_story-btn'>Criar história</button>
@@ -87,7 +96,7 @@ function App() {
             <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font == 'courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
                 <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
                     {theme === 'cold' ? <div className='print_container-font--wrapper'>
-                        <IconBtn icon={coldface}/>
+                        <IconBtn icon={coldface} />
                         <FontBtn text='arial' icon={arialSvg} />
                         <FontBtn text='times' icon={timessvg} />
                         <FontBtn text='courier' icon={courierSvg} />
