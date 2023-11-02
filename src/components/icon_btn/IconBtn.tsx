@@ -10,7 +10,7 @@ interface IconBtnProps {
 function IconBtn({ icon }: IconBtnProps) {
 
     const { theme, font } = useGlobalContext();
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const [randomMessageIndex, setRandomMessageIndex] = useState(0);
 
     const handleClick = () => {

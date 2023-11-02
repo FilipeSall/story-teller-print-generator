@@ -175,9 +175,9 @@
 .imagetermo{
   position: absolute;
   width: 80px;
-  left: 90%;
-  top: 40%;
-  opacity: 0.5;
+  left: 85%;
+  top: 60%;
+  opacity: 0.25;
   transition: .3s ease-in-out;
   filter: drop-shadow(1px 1px 3px black);
 }
@@ -276,6 +276,12 @@
 
   .themeBtn_container{
     justify-content: space-around;
-    margin-left: 6px;
+    padding: 2px;
+    gap: 2px;
+  }
+}
+@media screen and (max-width:550px) {
+  .print_container-font--wrapper{
+    width: 75%;
   }
 }
