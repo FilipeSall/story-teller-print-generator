@@ -50,7 +50,11 @@ function App() {
     }
 
     const handleCapture = () => {
-        window.print();
+        if(stories.length > 0){
+            window.print();
+        } else {
+            setError(true);
+        }
     };
 
     const cleanPage = () => {

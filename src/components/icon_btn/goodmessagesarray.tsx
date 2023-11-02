@@ -6,4 +6,7 @@ export  const goodVibeMessages = [
     'Pessimismo leva à fraqueza, otimismo ao poder.',
     'Um dia ruim não desfaz uma vida boa. Não desista!',
     'Vida é brisa passageira, então faça valer a pena.',
+    'Já sorriu para alguém hoje?',
+    'Que o verão no seu sorriso nunca acabe.',
+    'Ela tinha aquela fé bonita de que tudo daria certo no final.',
 ]
