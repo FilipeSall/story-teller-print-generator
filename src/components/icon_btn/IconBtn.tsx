@@ -10,7 +10,7 @@ interface IconBtnProps {
 function IconBtn({ icon }: IconBtnProps) {
 
     const { theme, font } = useGlobalContext();
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(window.innerWidth > 768);
     const [randomMessageIndex, setRandomMessageIndex] = useState(0);
 
     const handleClick = () => {
@@ -18,7 +18,7 @@ function IconBtn({ icon }: IconBtnProps) {
     }
 
     useEffect(() => {
-        if(show){
+        if (show) {
             const randomIndex = Math.floor(Math.random() * goodVibeMessages.length);
             setRandomMessageIndex(randomIndex);
         }
@@ -29,7 +29,7 @@ function IconBtn({ icon }: IconBtnProps) {
             {show &&
                 <div className={styles.statusMessage}>
                     <p><span className={styles.bold}>Tema:</span>{theme === 'hot' ? 'Calor' : 'Frio'}</p>
-                    <p><span className={styles.bold}>Fonte ativa:</span>{font === 'arial' && 'Arial'}{font === 'times'&& 'Times'}{font === 'courier' && 'Cursive'}{font === 'roboto' && 'Open sans'}</p>
+                    <p><span className={styles.bold}>Fonte ativa:</span>{font === 'arial' && 'Arial'}{font === 'times' && 'Times'}{font === 'courier' && 'Cursive'}{font === 'roboto' && 'Open sans'}</p>
                     <p className={styles.goodvibesmessage}>{goodVibeMessages[randomMessageIndex]}</p>
                 </div>}
 
