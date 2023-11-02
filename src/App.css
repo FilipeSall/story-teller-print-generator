@@ -153,14 +153,13 @@
 }
 
 .error_mensage{
-  color: rgb(201, 27, 27);
+  color: rgb(255, 2, 2);
   font-weight: bold;
   margin-top: -10px;
 }
 
 .error {
   animation: shake 0.5s ease-in-out;
-  border: 1px solid red;
 }
 
 /* svgs */
