@@ -1,5 +1,4 @@
 export  const goodVibeMessages = [
-    'Os problemas são oportunidades para se mostrar o que sabe', 
     'Tente de novo. Fracasse de novo. Mas fracasse melhor', 
     'Experiência é o nome que cada um dá a seus erros', 
     'Pessimismo leva à fraqueza, otimismo ao poder.',
@@ -8,7 +7,6 @@ export  const goodVibeMessages = [
     'Definir um objetivo é o ponto de partida de toda a realização',
     'Que o verão no seu sorriso nunca acabe.',
     'Ela tinha aquela fé bonita de que tudo daria certo no final.',
-    'A mente é tudo. Você se torna aquilo que você pensa',
     'Você é forte e será capaz de lutar e conquistar o seu espaço.',
     'Você só precisa se manter firme e tudo dará certo.',
     'Conheça-se e seja sua porta-voz em todos os lugares que desejar estar.',
