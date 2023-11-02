@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, useRef } from 'react';
 import { AiFillPrinter } from "react-icons/ai";
 import { MdCleaningServices } from "react-icons/md";
+import { FaTrashAlt } from "react-icons/fa";
 import { useGlobalContext } from '../../CreateContext';
 import '../../App.css';
 import ThemeBtn from '../theme_btn/ThemeBtn';
@@ -24,7 +25,7 @@ import termometrohot from '../../assets/termometrohot.svg';
 function App() {
     const [text, setText] = useState<string>('');
     const [title, setTitle] = useState<string>("");
-    const [stories, setStories] = useState<Array<{ title: string; text: string }>>([]);
+    const [stories, setStories] = useState<Array<{ title: string; text: string, id?:number}>>([]);
     const [error, setError] = useState<boolean>(false);
     const { theme, font } = useGlobalContext();
     const divRef = useRef(null);
@@ -63,7 +64,10 @@ function App() {
         setStories([])
     }
 
-    
+    const deleteStory = (id: number | undefined) => {
+        const updatedStories = stories.filter(story => story.id !== id);
+        setStories(updatedStories);
+      };      
 
     return (
         <main className={`main_container theme_${theme}`}>
@@ -121,6 +125,7 @@ function App() {
                     <div key={index} className='story_container'>
                         <h1 className='story_title'>{story.title}</h1>
                         <p className='story_text'>{story.text}</p>
+                        <button className='remove_unique-story--btn' onClick={() => deleteStory(story.id)}><FaTrashAlt size={22} fill='#808080' /></button>
                     </div>
                 ))}
             </div>
