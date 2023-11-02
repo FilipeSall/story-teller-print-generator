@@ -17,6 +17,21 @@ function IconBtn({ icon }: IconBtnProps) {
         setShow(!show);
     }
 
+    const themeMap: Record<string, string> = {
+        hot: 'Calor',
+        cold: 'Frio',
+      };
+      
+      const fontMap: Record<string, string> = {
+        arial: 'Arial',
+        times: 'Times',
+        courier: 'Cursive',
+        roboto: 'Open sans',
+      };
+
+    const themeText = themeMap[theme] || '';
+    const fontText = fontMap[font] || '';
+
     useEffect(() => {
         if (show) {
             const randomIndex = Math.floor(Math.random() * goodVibeMessages.length);
@@ -28,8 +43,8 @@ function IconBtn({ icon }: IconBtnProps) {
         <>
             {show &&
                 <div className={styles.statusMessage}>
-                    <p><span className={styles.bold}>Tema:</span>{theme === 'hot' ? 'Calor' : 'Frio'}</p>
-                    <p><span className={styles.bold}>Fonte ativa:</span>{font === 'arial' && 'Arial'}{font === 'times' && 'Times'}{font === 'courier' && 'Cursive'}{font === 'roboto' && 'Open sans'}</p>
+                    <p><span className={styles.bold}>Tema:</span>{themeText}</p>
+                    <p><span className={styles.bold}>Fonte ativa:</span>{fontText}</p>
                     <p className={styles.goodvibesmessage}>{goodVibeMessages[randomMessageIndex]}</p>
                 </div>}
 
