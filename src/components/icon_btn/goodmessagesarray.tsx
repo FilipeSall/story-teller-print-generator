@@ -1,6 +1,5 @@
 export  const goodVibeMessages = [
     'Tente de novo. Fracasse de novo. Mas fracasse melhor', 
-    'Experiência é o nome que cada um dá a seus erros', 
     'Pessimismo leva à fraqueza, otimismo ao poder.',
     'Um dia ruim não desfaz uma vida boa. Não desista!',
     'Vida é brisa passageira, então faça valer a pena.',
@@ -12,5 +11,5 @@ export  const goodVibeMessages = [
     'Conheça-se e seja sua porta-voz em todos os lugares que desejar estar.',
     'Faça sempre o seu melhor e acredite que o melhor possa ser feito.',
     'Não importa que você vá devagar, contanto que você não pare.',
-    'Descubra quem você realmente é e se aceite.'
+    'Descubra quem você realmente é e se aceite.',
 ]
