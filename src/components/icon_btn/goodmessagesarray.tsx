@@ -10,4 +10,6 @@ export  const goodVibeMessages = [
     'Que o verão no seu sorriso nunca acabe.',
     'Ela tinha aquela fé bonita de que tudo daria certo no final.',
     'A mente é tudo. Você se torna aquilo que você pensa',
+    'Você é forte e será capaz de lutar e conquistar o seu espaço.',
+    'você só precisa se manter firme e tudo dará certo.',
 ]
