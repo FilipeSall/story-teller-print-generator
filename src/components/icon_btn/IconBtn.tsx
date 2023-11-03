@@ -20,14 +20,14 @@ function IconBtn({ icon }: IconBtnProps) {
     const themeMap: Record<string, string> = {
         hot: 'Calor',
         cold: 'Frio',
-      };
-      
-      const fontMap: Record<string, string> = {
+    };
+
+    const fontMap: Record<string, string> = {
         arial: 'Arial',
         times: 'Times',
         courier: 'Cursive',
         roboto: 'Open sans',
-      };
+    };
 
     const themeText = themeMap[theme] || '';
     const fontText = fontMap[font] || '';
@@ -39,20 +39,34 @@ function IconBtn({ icon }: IconBtnProps) {
         }
     }, [show])
 
+    const currentMessage = goodVibeMessages[randomMessageIndex];
+
+    let messageClass = styles.goodvibesmessage;
+
+    if (currentMessage.length >= 75) {
+        messageClass = `${styles.superLongMessage}`;
+    } else if (currentMessage.length > 20) {
+        messageClass = `${styles.longMessage}`;
+    } else{
+        messageClass = `${styles.shortMessage}`;
+    }
+
     return (
         <>
-            {show &&
+            {show && (
                 <div className={styles.statusMessage}>
                     <p><span className={styles.bold}>Tema:</span>{themeText}</p>
                     <p><span className={styles.bold}>Fonte ativa:</span>{fontText}</p>
-                    <p className={styles.goodvibesmessage}>{goodVibeMessages[randomMessageIndex]}</p>
-                </div>}
+                    <p className={messageClass}>
+                        {currentMessage}
+                    </p>
+                </div>
+            )}
 
             <button className={styles.btn} onClick={handleClick}>
-                <img src={icon} />
+                <img src={icon} alt="Icon" />
             </button>
         </>
-    )
+    );
 }
-
 export default IconBtn

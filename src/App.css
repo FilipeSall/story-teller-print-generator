@@ -70,7 +70,7 @@
   margin: 8px;
 }
 
-/*parte que gera as historias e imprime */
+/*cabeçalho que gera as historias e imprime */
 
 .print_container {
   width: 95vw;
@@ -133,24 +133,6 @@
   height: 10vh;
   background-color: inherit;
   cursor: pointer;
-}
-
-.story_container {
-  width: 90%;
-  animation: showSlowly .5s forwards;
-  margin: 12px;
-  padding: 8px 14px;
-  border: 1px solid rgb(82, 82, 82);
-  position: relative;
-  word-wrap: break-word;
-}
-
-.story_text {
-  font-size: 1.5rem;
-}
-
-.story_title {
-  font-size: 2.7rem;
 }
 
 .error_mensage {

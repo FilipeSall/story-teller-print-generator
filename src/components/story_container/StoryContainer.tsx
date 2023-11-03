@@ -1,10 +1,18 @@
-import { useState } from 'react';
 import './StoryContainer.css';
 import { FaTrashAlt } from "react-icons/fa";
 
-function StoryContainer() {
+interface Story {
+    id: number; 
+    title: string;
+    text: string;
+  }
+  
+  interface StoryContainerProps {
+    stories: Story[]; 
+    setStories: (updatedStories: Story[]) => void; 
+  }
+function StoryContainer({stories, setStories}:StoryContainerProps) {
 
-    const [stories, setStories] = useState<Array<{ title: string; text: string, id?: number }>>([]);
 
     const deleteStory = (id: number | undefined) => {
         if (id !== undefined) {

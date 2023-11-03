@@ -37,8 +37,17 @@
     margin-right: 4px;
 }
 
-.goodvibesmessage {
+
+.shortMessage{
     font-size: 0.76rem;
+}
+
+.longMessage{
+    font-size: 0.73rem;
+}
+
+.superLongMessage{
+    font-size: 0.71rem;
 }
 
 @keyframes slideFromBottom {

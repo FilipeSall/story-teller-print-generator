@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, useRef } from 'react';
 import { AiFillPrinter } from "react-icons/ai";
 import { MdCleaningServices } from "react-icons/md";
-import { FaTrashAlt } from "react-icons/fa";
+
 import { useGlobalContext } from '../../CreateContext';
 import '../../App.css';
 import ThemeBtn from '../theme_btn/ThemeBtn';
@@ -21,11 +21,12 @@ import coldface from '../../assets/coldface.webp';
 import IconBtn from '../icon_btn/IconBtn';
 import termometrocold from '../../assets/termometrocold.svg';
 import termometrohot from '../../assets/termometrohot.svg';
+import StoryContainer from '../story_container/StoryContainer';
 
 function App() {
     const [text, setText] = useState<string>('');
     const [title, setTitle] = useState<string>("");
-    const [stories, setStories] = useState<Array<{ title: string; text: string, id?: number }>>([]);
+    const [stories, setStories] = useState<Array<{ title: string; text: string, id: number }>>([]);
     const [error, setError] = useState<boolean>(false);
     const [nextId, setNextId] = useState(1);
     const { theme, font } = useGlobalContext();
@@ -43,15 +44,15 @@ function App() {
 
     const createStory = () => {
         if (title.length > 0 || text.length > 0) {
-            const newStory = { title, text, id: nextId };
-            setStories([...stories, newStory]);
-            setNextId(nextId + 1);
-            setTitle('');
-            setText('');
+          const newStory = { title, text, id: nextId };
+          setStories([...stories, newStory]);
+          setNextId(nextId + 1);
+          setTitle('');
+          setText('');
         } else {
-            setError(true);
+          setError(true);
         }
-    }
+      }
 
     const handleCapture = () => {
         if (stories.length > 0) {
@@ -64,13 +65,6 @@ function App() {
     const cleanPage = () => {
         setStories([])
     }
-
-    const deleteStory = (id: number | undefined) => {
-        if (id !== undefined) {
-            const updatedStories = stories.filter(story => story.id !== id);
-            setStories(updatedStories);
-        }
-    };
 
     return (
         <main className={`main_container theme_${theme}`}>
@@ -89,7 +83,7 @@ function App() {
                     <img className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
                 </>
             }
-            
+
             <div className='title_container'>
                 <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
                 <div className='themeBtn_container'>
@@ -124,18 +118,7 @@ function App() {
                         <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
                     </div>
                 </div>
-                {stories.map((story, index) => (
-                    <div key={index} className='story_container'>
-                        <h1 className='story_title'>{story.title}</h1>
-                        <p className='story_text'>{story.text}</p>
-                        <div className='button_container-edit--wrapper'>
-                            <button className='remove_unique-story--btn' onClick={() => deleteStory(story.id)}
-                            >
-                             <FaTrashAlt size={22} fill='#808080' />
-                            </button>
-                        </div>
-                    </div>
-                ))}
+              <StoryContainer setStories={setStories} stories={stories} />
             </div>
         </main>
     );
