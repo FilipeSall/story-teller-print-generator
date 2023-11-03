@@ -27,6 +27,7 @@ function App() {
     const [title, setTitle] = useState<string>("");
     const [stories, setStories] = useState<Array<{ title: string; text: string, id?:number}>>([]);
     const [error, setError] = useState<boolean>(false);
+    const [nextId, setNextId] = useState(1);
     const { theme, font } = useGlobalContext();
     const divRef = useRef(null);
 
@@ -43,8 +44,9 @@ function App() {
 
     const createStory = () => {
         if (title.length > 0 || text.length > 0) {
-            const newStory = { title, text };
+            const newStory = { title, text, id: nextId };
             setStories([...stories, newStory]);
+            setNextId(nextId + 1); 
             setTitle('');
             setText('');
         } else {
@@ -65,8 +67,10 @@ function App() {
     }
 
     const deleteStory = (id: number | undefined) => {
-        const updatedStories = stories.filter(story => story.id !== id);
-        setStories(updatedStories);
+        if (id !== undefined) {
+            const updatedStories = stories.filter(story => story.id !== id);
+            setStories(updatedStories);
+          }
       };      
 
     return (
