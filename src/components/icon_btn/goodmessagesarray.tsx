@@ -17,4 +17,8 @@ export  const goodVibeMessages = [
     'Os dias difíceis são a forma mais rápida de aprendermos a apreciar os bons.',
     'Não há a necessidade de caminhar rápido. Apenas siga caminhando.',
     'Respeite seu corpo e trate com carinho a sua mente.',
+    'Transportai um punhado de terra todos os dias e fareis uma montanha.', 
+    'Mudar é bom! Aprenda a se redescobrir.',
+    'Você precisa fazer aquilo que pensa que não é capaz de fazer.',
+    'Você já fez uma caminhada tão bonita até agora. Parabenize-se.',
 ]
