@@ -2,7 +2,6 @@ export  const goodVibeMessages = [
     'Tente de novo. Fracasse de novo. Mas fracasse melhor', 
     'Um dia ruim não desfaz uma vida boa. Não desista!',
     'Vida é brisa passageira, então faça valer a pena.',
-    'Definir um objetivo é o ponto de partida de toda a realização',
     'Que o verão no seu sorriso nunca acabe.',
     'Ela tinha aquela fé bonita de que tudo daria certo no final.',
     'Você é forte e será capaz de lutar e conquistar o seu espaço.',
