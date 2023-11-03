@@ -2,6 +2,7 @@ import { useState, ChangeEvent, useRef } from 'react';
 import { AiFillPrinter } from "react-icons/ai";
 import { MdCleaningServices } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
+import { BsFillPencilFill } from "react-icons/bs";
 import { useGlobalContext } from '../../CreateContext';
 import '../../App.css';
 import ThemeBtn from '../theme_btn/ThemeBtn';
@@ -30,6 +31,7 @@ function App() {
     const [nextId, setNextId] = useState(1);
     const { theme, font } = useGlobalContext();
     const divRef = useRef(null);
+
 
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value);
@@ -89,7 +91,7 @@ function App() {
                     <img className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
                 </>
             }
-            
+
             <div className='title_container'>
                 <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
                 <div className='themeBtn_container'>
@@ -128,12 +130,11 @@ function App() {
                     <div key={index} className='story_container'>
                         <h1 className='story_title'>{story.title}</h1>
                         <p className='story_text'>{story.text}</p>
-                        <div className='button_container-edit--wrapper'>
-                            <button className='remove_unique-story--btn' onClick={() => deleteStory(story.id)}
-                            >
-                             <FaTrashAlt size={22} fill='#808080' />
-                            </button>
-                        </div>
+                        <button className='remove_unique-story--btn' onClick={() => deleteStory(story.id)}
+                        >
+                         <FaTrashAlt size={22} fill='#808080' />
+                        </button>
+                        <button className='edit_story-btn'> <BsFillPencilFill /></button>
                     </div>
                 ))}
             </div>

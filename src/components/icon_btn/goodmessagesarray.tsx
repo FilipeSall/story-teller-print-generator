@@ -11,4 +11,10 @@ export  const goodVibeMessages = [
     'Faça sempre o seu melhor e acredite que o melhor possa ser feito.',
     'Não importa que você vá devagar, contanto que você não pare.',
     'Descubra quem você realmente é e se aceite.',
+    'Que todos os nossos passos nos levem para o que nos faz feliz de verdade.',
+    'Abra os olhos e aventure-se nessa jornada chamada vida!',
+    'Há tantas pessoas que torcem por você na vida.',
+    'Os dias difíceis são a forma mais rápida de aprendermos a apreciar os bons.',
+    'Não há a necessidade de caminhar rápido. Apenas siga caminhando.',
+    'Respeite seu corpo e trate com carinho a sua mente.',
 ]
