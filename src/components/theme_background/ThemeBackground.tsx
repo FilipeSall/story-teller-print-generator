@@ -9,19 +9,20 @@ import cable from '../../assets/cold_theme/cable_cars.webp';
 import house from '../../assets/cold_theme/house.webp';
 import { useEffect, useRef } from 'react';
 
+
 function ThemeBackground() {
 
     const { theme } = useGlobalContext();
 
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
       if (theme === 'cold') {
         const handleScroll = () => {
           const scrollY = window.scrollY;
-          const elements = containerRef.current.querySelectorAll('img');
+          const elements = containerRef.current?.querySelectorAll('img');
   
-          elements.forEach((element, index) => {
+          elements?.forEach((element, index) => {
             const speed = (index + 1) * 0.2;
             const translateY = scrollY * speed;
             element.style.transform = `translateY(${translateY}px)`;
