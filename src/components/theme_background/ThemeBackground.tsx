@@ -22,10 +22,16 @@ function ThemeBackground() {
           const scrollY = window.scrollY;
           const elements = containerRef.current?.querySelectorAll('img');
   
-          elements?.forEach((element, index) => {
-            const speed = (index + 1) * 0.2;
-            const translateY = scrollY * speed;
-            element.style.transform = `translateY(${translateY}px)`;
+          elements?.forEach((element) => {
+            if (element.id === 'crs') {
+              const speedX = 0.2; 
+              const translateX = scrollY * speedX;
+              element.style.transform = `translateX(${translateX}px)`;
+            } else {
+              const speedY = 0.2; 
+              const translateY = scrollY * speedY;
+              element.style.transform = `translateY(${translateY}px)`;
+            }
           });
         };
   
