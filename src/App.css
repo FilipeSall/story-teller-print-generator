@@ -99,6 +99,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.lato_font{
+  font-family: 'Lato', sans-serif;
+}
+
 .button_container {
   display: flex;
   width: 100%;

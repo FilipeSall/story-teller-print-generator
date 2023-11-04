@@ -27,6 +27,7 @@ function IconBtn({ icon }: IconBtnProps) {
         times: 'Times',
         courier: 'Cursive',
         roboto: 'Open sans',
+        lato: 'Lato',
     };
 
     const themeText = themeMap[theme] || '';
@@ -47,7 +48,7 @@ function IconBtn({ icon }: IconBtnProps) {
         messageClass = `${styles.superLongMessage}`;
     } else if (currentMessage.length > 20) {
         messageClass = `${styles.longMessage}`;
-    } else{
+    } else {
         messageClass = `${styles.shortMessage}`;
     }
 

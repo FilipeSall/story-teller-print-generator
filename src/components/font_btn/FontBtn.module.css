@@ -9,10 +9,11 @@
     background-color: inherit;
     border-radius: 5px;
     padding: 4px;
+    border: none;
 }
 
 @media screen and (max-width:600px) {
-    .button{
-        border: none;
+    .button {
+       margin: 2px;
     }
 }

@@ -22,6 +22,8 @@ import IconBtn from '../icon_btn/IconBtn';
 import termometrocold from '../../assets/termometrocold.svg';
 import termometrohot from '../../assets/termometrohot.svg';
 import StoryContainer from '../story_container/StoryContainer';
+import latoSvg from '../../assets/lato.webp';
+import latoAltSvg from '../../assets/latoAlt.webp';
 
 function App() {
     const [text, setText] = useState<string>('');
@@ -96,7 +98,7 @@ function App() {
             {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
             <button onClick={createStory} className='create_story-btn'>Criar história</button>
 
-            <div ref={divRef} className={`print_container ${font === 'arial' && 'arial_font'} ${font === 'times' && 'times_font'} ${font == 'courier' && 'courier_font'} ${font === 'roboto' && 'roboto_font'}`}>
+            <div ref={divRef} className={`print_container ${font}_font`}>
                 <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
                     {theme === 'cold' ? <div className='print_container-font--wrapper'>
                         <IconBtn icon={coldface} />
@@ -104,6 +106,7 @@ function App() {
                         <FontBtn text='times' icon={timessvg} />
                         <FontBtn text='courier' icon={courierSvg} />
                         <FontBtn text='roboto' icon={robotoSvg} />
+                        <FontBtn text='lato' icon={latoSvg} />
                     </div> :
                         <div className='print_container-font--wrapper'>
                             <IconBtn icon={hotface} />
@@ -111,6 +114,7 @@ function App() {
                             <FontBtn text='times' icon={timesaltsvg} />
                             <FontBtn text='courier' icon={courierAltSvg} />
                             <FontBtn text='roboto' icon={robotoAltSvg} />
+                            <FontBtn text='lato' icon={latoAltSvg} />
                         </div>
                     }
                     <div className='print_container-button--wrapper'>
