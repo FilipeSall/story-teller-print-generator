@@ -76,9 +76,9 @@ function App() {
                         <ThemeBtn themeBtn='cold' />
                     </div>
                 </div>
-                <input type='text' onChange={titleHandleChange} className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
-                <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
-                {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
+                <input type='text' onChange={titleHandleChange} className={`${error && 'error'} input-${theme}`} value={title} placeholder='Digite o título' />
+                <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'} textarea-${theme}`} />
+                {error && <p className={`error_mensage error-${theme}`}>Pelo menos um campo precisa ser preenchido</p>}
                 <button onClick={createStory} className='create_story-btn'>Criar história</button>
                 <div ref={divRef} className={`print_container ${font}_font`}>
                     <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>

@@ -30,7 +30,7 @@ function StoryContainer({stories, setStories}:StoryContainerProps) {
                     <div className='button_container-edit--wrapper'>
                         <button className='remove_unique-story--btn' onClick={() => deleteStory(story.id)}
                         >
-                            <FaTrashAlt size={22} fill='#808080' />
+                            <FaTrashAlt size={18} fill='#808080' />
                         </button>
                     </div>
                 </div>

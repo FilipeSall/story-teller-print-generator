@@ -7,20 +7,39 @@ import mountain_04 from '../../assets/cold_theme/monutain_04.webp';
 import trees from '../../assets/cold_theme/trees.webp';
 import cable from '../../assets/cold_theme/cable_cars.webp';
 import house from '../../assets/cold_theme/house.webp';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from 'react';
 
 function ThemeBackground() {
 
     const { theme } = useGlobalContext();
 
+    const containerRef = useRef(null);
 
+    useEffect(() => {
+      if (theme === 'cold') {
+        const handleScroll = () => {
+          const scrollY = window.scrollY;
+          const elements = containerRef.current.querySelectorAll('img');
+  
+          elements.forEach((element, index) => {
+            const speed = (index + 1) * 0.2;
+            const translateY = scrollY * speed;
+            element.style.transform = `translateY(${translateY}px)`;
+          });
+        };
+  
+        window.addEventListener('scroll', handleScroll);
+  
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
+    }, [theme]);
 
     return (
         <>
             {theme === 'cold' && (
-                <section className='theme_container-wrapper'>
+                <section className='theme_container-wrapper' ref={containerRef}>
                     <img src={mountain_01} id='m1' />
                     <img src={mountain_02} id='m2' />
                     <img src={mountain_03} id='m3' />
