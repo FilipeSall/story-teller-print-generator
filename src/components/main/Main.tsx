@@ -1,12 +1,10 @@
 import { useState, ChangeEvent, useRef } from 'react';
 import { AiFillPrinter } from "react-icons/ai";
 import { MdCleaningServices } from "react-icons/md";
-
 import { useGlobalContext } from '../../CreateContext';
 import '../../App.css';
+import '../../css/cold_theme.css';
 import ThemeBtn from '../theme_btn/ThemeBtn';
-import icesvg from '../../assets/ice.svg';
-import fireSvg from '../../assets/fire.svg';
 import FontBtn from '../font_btn/FontBtn';
 import arialSvg from '../../assets/arial.webp';
 import timessvg from '../../assets/times.webp';
@@ -19,11 +17,10 @@ import robotoAltSvg from '../../assets/robotoAlt.webp';
 import hotface from '../../assets/hotface.webp';
 import coldface from '../../assets/coldface.webp';
 import IconBtn from '../icon_btn/IconBtn';
-import termometrocold from '../../assets/termometrocold.svg';
-import termometrohot from '../../assets/termometrohot.svg';
 import StoryContainer from '../story_container/StoryContainer';
 import latoSvg from '../../assets/lato.webp';
 import latoAltSvg from '../../assets/latoAlt.webp';
+import ThemeBackground from '../theme_background/ThemeBackground';
 
 function App() {
     const [text, setText] = useState<string>('');
@@ -70,59 +67,46 @@ function App() {
 
     return (
         <main className={`main_container theme_${theme}`}>
-            {theme === 'cold' ?
-                <>
-                    <svg width="100" height="100" className='svg'>
-                        <image href={icesvg} x="0" y="0" width="100" height="100" />
-                    </svg>
-                    <img className='imagetermo' src={termometrocold} alt='termometro com baixa temperatura' />
-                </>
-                :
-                <>
-                    <svg width="100" height="100" className='svg'>
-                        <image href={fireSvg} x="0" y="0" width="100" height="100" />
-                    </svg>
-                    <img className='imagetermo' src={termometrohot} alt='termometro com baixa temperatura' />
-                </>
-            }
-
-            <div className='title_container'>
-                <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
-                <div className='themeBtn_container'>
-                    <ThemeBtn themeBtn='hot' />
-                    <ThemeBtn themeBtn='cold' />
-                </div>
-            </div>
-            <input type='text' onChange={titleHandleChange} className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
-            <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
-            {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
-            <button onClick={createStory} className='create_story-btn'>Criar história</button>
-
-            <div ref={divRef} className={`print_container ${font}_font`}>
-                <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
-                    {theme === 'cold' ? <div className='print_container-font--wrapper'>
-                        <IconBtn icon={coldface} />
-                        <FontBtn text='arial' icon={arialSvg} />
-                        <FontBtn text='times' icon={timessvg} />
-                        <FontBtn text='courier' icon={courierSvg} />
-                        <FontBtn text='roboto' icon={robotoSvg} />
-                        <FontBtn text='lato' icon={latoSvg} />
-                    </div> :
-                        <div className='print_container-font--wrapper'>
-                            <IconBtn icon={hotface} />
-                            <FontBtn text='arial' icon={arialaltsvg} />
-                            <FontBtn text='times' icon={timesaltsvg} />
-                            <FontBtn text='courier' icon={courierAltSvg} />
-                            <FontBtn text='roboto' icon={robotoAltSvg} />
-                            <FontBtn text='lato' icon={latoAltSvg} />
-                        </div>
-                    }
-                    <div className='print_container-button--wrapper'>
-                        <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
-                        <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
+            <ThemeBackground />
+            <div className='main_container-wrapper '>
+                <div className='title_container'>
+                    <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
+                    <div className='themeBtn_container'>
+                        <ThemeBtn themeBtn='hot' />
+                        <ThemeBtn themeBtn='cold' />
                     </div>
                 </div>
-              <StoryContainer setStories={setStories} stories={stories} />
+                <input type='text' onChange={titleHandleChange} className={`${error && 'error'}`} value={title} placeholder='Digite o título' />
+                <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'}`} />
+                {error && <p className='error_mensage'>Pelo menos um campo precisa ser preenchido</p>}
+                <button onClick={createStory} className='create_story-btn'>Criar história</button>
+                <div ref={divRef} className={`print_container ${font}_font`}>
+                    <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
+                        {theme === 'cold' ? <div className='print_container-font--wrapper'>
+                            <IconBtn icon={coldface} />
+                            <FontBtn text='arial' icon={arialSvg} />
+                            <FontBtn text='times' icon={timessvg} />
+                            <FontBtn text='courier' icon={courierSvg} />
+                            <FontBtn text='roboto' icon={robotoSvg} />
+                            <FontBtn text='lato' icon={latoSvg} />
+                        </div> :
+                            <div className='print_container-font--wrapper'>
+                                <IconBtn icon={hotface} />
+                                <FontBtn text='arial' icon={arialaltsvg} />
+                                <FontBtn text='times' icon={timesaltsvg} />
+                                <FontBtn text='courier' icon={courierAltSvg} />
+                                <FontBtn text='roboto' icon={robotoAltSvg} />
+                                <FontBtn text='lato' icon={latoAltSvg} />
+                            </div>
+                        }
+                        <div className='print_container-button--wrapper'>
+                            <button className='print_container-button'><AiFillPrinter size={28} onClick={handleCapture} /></button>
+                            <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
+                        </div>
+                    </div>
+                  <StoryContainer setStories={setStories} stories={stories} />
+                  
+                </div>
             </div>
         </main>
     );
