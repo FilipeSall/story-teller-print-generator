@@ -9,63 +9,13 @@ import cable from '../../assets/cold_theme/cable_cars.webp';
 import house from '../../assets/cold_theme/house.webp';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from 'react';
-import { MotionPathPlugin, ScrollToPlugin, TextPlugin } from 'gsap/all';
-
-
-gsap.registerPlugin(MotionPathPlugin, ScrollToPlugin, TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 function ThemeBackground() {
 
     const { theme } = useGlobalContext();
 
-    useEffect(() => {
-        if (theme === 'cold') {
-          gsap.from('#m1', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 100,
-          });
-          gsap.from('#m2', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 50,
-          });
-          gsap.from('#m3', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 200,
-          });
-          gsap.from('#m4', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 150,
-          });
-          gsap.from('#tr', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 100,
-          });
-          gsap.from('#crs', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            x: 100,
-          });
-          gsap.from('#house', {
-            scrollTrigger: {
-              scrub: true,
-            },
-            y: 50,
-          });
-        }
-      }, [theme]);
+
 
     return (
         <>

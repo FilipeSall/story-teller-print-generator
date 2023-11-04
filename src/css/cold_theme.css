@@ -12,6 +12,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    top: 15px;
     width: 100%;
     pointer-events: none;
 }
@@ -25,3 +26,8 @@
     bottom: initial;
 }
 
+@media screen and (max-width:768px) {
+    .theme_container-wrapper img{
+        height: 100vh;
+    }
+}
