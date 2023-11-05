@@ -69,7 +69,7 @@ function App() {
     return (
         <main className={`main_container theme_${theme}`}>
             <ThemeBackground />
-            <div className={`main_container-wrapper main_container-wrapper--${theme}`}>
+            <div className={`main_container-wrapper`}>
                 <div className='title_container'>
                     <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
                     <div className='themeBtn_container'>

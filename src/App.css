@@ -80,6 +80,16 @@
   outline: none;
 }
 
+.input-hot, .textarea-hot{
+  box-shadow: inset 0 0 15px 2px #ff5e01;
+  padding: 4px 8px;
+}
+
+.input-hot:focus, .textarea-hot:focus{
+  outline: none;
+  border: 1px solid #ff5e00;
+}
+
 .main_container-wrapper>textarea {
   width: 50%;
   height: 50vh;
@@ -105,6 +115,12 @@
   color: #00070c;
 }
 
+.create_story-hot{
+  box-shadow: inset 0 0 12px #ff5e00;
+  background-color: #fbdcca;
+  border: 1px solid #622400;
+}
+
 /*cabeçalho que gera as historias e imprime */
 
 .print_container {
@@ -121,6 +137,10 @@
 
 .print_container-cold{
   box-shadow: 0 0 0 4px #bedbe5;
+}
+
+.print_container-hot{
+  box-shadow: 0 0 0 4px #FBAB7E;
 }
 
 .arial_font {
@@ -170,6 +190,7 @@
 
 .button_container-hot {
   background-color: #f9d4b7;
+  box-shadow:inset 0 0 25px 2px #ef5801;
 }
 
 .print_container-button {
@@ -193,6 +214,11 @@
   background-color: #bedbe5;
   padding: 6px;
   border-radius: 8px;
+}
+
+.error-hot{
+   color: red;
+   text-shadow: 1px 1px 1px rgb(212, 210, 210);
 }
 
 .error {
