@@ -25,7 +25,6 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const initialUser = localStorage.getItem('user') || 'Letícia';
     const [user, setUser] = useState(initialUser);
 
-    // Defina o usuário no localStorage sempre que ele for alterado
     const setUserWithLocalStorage = (newUser: string) => {
         setUser(newUser);
         localStorage.setItem('user', newUser);
