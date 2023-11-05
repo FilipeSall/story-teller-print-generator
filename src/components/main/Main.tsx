@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, useRef } from 'react';
 import { AiFillPrinter } from "react-icons/ai";
+import { BiSolidError } from "react-icons/bi";
 import { MdCleaningServices } from "react-icons/md";
 import { useGlobalContext } from '../../CreateContext';
 import '../../App.css';
@@ -68,7 +69,7 @@ function App() {
     return (
         <main className={`main_container theme_${theme}`}>
             <ThemeBackground />
-            <div className='main_container-wrapper '>
+            <div className={`main_container-wrapper main_container-wrapper--${theme}`}>
                 <div className='title_container'>
                     <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
                     <div className='themeBtn_container'>
@@ -78,8 +79,8 @@ function App() {
                 </div>
                 <input type='text' onChange={titleHandleChange} className={`${error && 'error'} input-${theme}`} value={title} placeholder='Digite o título' />
                 <textarea onChange={handleChange} value={text} placeholder='Digite a história' className={`${error && 'error'} textarea-${theme}`} />
-                {error && <p className={`error_mensage error-${theme}`}>Pelo menos um campo precisa ser preenchido</p>}
-                <button onClick={createStory} className='create_story-btn'>Criar história</button>
+                {error && <p className={`error_mensage error-${theme}`}> <BiSolidError /> Pelo menos um campo precisa ser preenchido</p>}
+                <button onClick={createStory} className={`create_story-btn create_story-${theme}`}>Criar história</button>
                 <div ref={divRef} className={`print_container ${font}_font`}>
                     <div className={`button_container ${theme === 'cold' ? 'button_container-cold' : 'button_container-hot'}`}>
                         {theme === 'cold' ? <div className='print_container-font--wrapper'>
@@ -105,7 +106,6 @@ function App() {
                         </div>
                     </div>
                   <StoryContainer setStories={setStories} stories={stories} />
-                  
                 </div>
             </div>
         </main>
