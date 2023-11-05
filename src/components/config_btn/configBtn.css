@@ -1,0 +1,80 @@
+.config_container {
+    position: absolute;
+    top: 15px;
+    left: 90%;
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+    align-items: center;
+    justify-items: center;
+    width: 10%;
+
+}
+
+.config_btn {
+    border: none;
+    background-color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    width: 5%;
+    height: 5vh;
+    z-index: 30;
+
+}
+
+.config_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px;
+    animation: showComponent .5s ease-in-out forwards;
+}
+
+.config_form>input {
+    width: 75%;
+}
+
+.error{
+    border: 1px solid red;
+}
+
+.config_form>button {
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@keyframes showComponent {
+    0%{
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .config_container {
+        left: 85%;
+        top: 25px;
+    }
+    .config_form {
+        position: absolute;
+        left: -135px;
+        width: 50vw;
+        top: 30px;
+        background-color: bisque;
+    }
+}

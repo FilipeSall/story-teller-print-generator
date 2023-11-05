@@ -8,6 +8,8 @@ interface GlobalContext {
     setTheme: (theme: string) => void,
     font: string,
     setFont: (font: string) => void,
+    user:string,
+    setUser:(user:string) => void,
 }
 
 const GlobalContext = createContext<any>(null);
@@ -20,11 +22,24 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const [theme, setTheme] = useState('cold');
     const [font, setFont] = useState('arial');
+    const initialUser = localStorage.getItem('user') || 'Letícia';
+    const [user, setUser] = useState(initialUser);
+
+    // Defina o usuário no localStorage sempre que ele for alterado
+    const setUserWithLocalStorage = (newUser: string) => {
+        setUser(newUser);
+        localStorage.setItem('user', newUser);
+    };
 
     return (
-        <GlobalContext.Provider value={{ theme, setTheme, font, setFont }}>
+        <GlobalContext.Provider value={{ theme, setTheme, font, setFont, user, setUser: setUserWithLocalStorage }}>
             {children}
         </GlobalContext.Provider>
     );
 }
+
+
+
+
+
 

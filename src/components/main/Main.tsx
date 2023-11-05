@@ -22,6 +22,7 @@ import StoryContainer from '../story_container/StoryContainer';
 import latoSvg from '../../assets/lato.webp';
 import latoAltSvg from '../../assets/latoAlt.webp';
 import ThemeBackground from '../theme_background/ThemeBackground';
+import ConfigBtn from '../config_btn/ConfigBtn';
 
 function App() {
     const [text, setText] = useState<string>('');
@@ -29,7 +30,7 @@ function App() {
     const [stories, setStories] = useState<Array<{ title: string; text: string, id: number }>>([]);
     const [error, setError] = useState<boolean>(false);
     const [nextId, setNextId] = useState(1);
-    const { theme, font } = useGlobalContext();
+    const { theme, font, user } = useGlobalContext();
     const divRef = useRef(null);
 
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -69,9 +70,10 @@ function App() {
     return (
         <main className={`main_container theme_${theme}`}>
             <ThemeBackground />
+            <ConfigBtn />
             <div className={`main_container-wrapper`}>
                 <div className='title_container'>
-                    <h1 className={`main_title main_title-${theme}`}>Olá, Letícia</h1>
+                    <h1 className={`main_title main_title-${theme}`}>Olá, {user}</h1>
                     <div className='themeBtn_container'>
                         <ThemeBtn themeBtn='hot' />
                         <ThemeBtn themeBtn='cold' />
