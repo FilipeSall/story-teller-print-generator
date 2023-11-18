@@ -32,7 +32,7 @@ function ConfigBtn() {
             {show &&
                 <div className='config_form'>
                     <label>Não é {user}?</label>
-                    <input type='text' onChange={handleChange} value={changeUser} className={`${error && 'error'}`} />
+                    <input type='text' onChange={handleChange} value={changeUser} className={`${error && 'error'}`} placeholder='Qual seu nome' />
                     <button onClick={handleClick}>Alterar</button>
                 </div>
             }

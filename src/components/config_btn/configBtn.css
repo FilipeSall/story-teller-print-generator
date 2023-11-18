@@ -41,6 +41,7 @@
 
 .config_form>input {
     width: 75%;
+    padding: 1px;
 }
 
 .error{

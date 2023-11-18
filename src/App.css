@@ -157,11 +157,11 @@
 }
 
 .roboto_font {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .lato_font{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'Courier New', Courier, monospace;
 }
 
 .button_container {
