@@ -28,6 +28,7 @@ function IconBtn({ icon }: IconBtnProps) {
         courier: 'Cursive',
         roboto: 'Open sans',
         lato: 'Lato',
+        metodo: 'Método'
     };
 
     const themeText = themeMap[theme] || '';

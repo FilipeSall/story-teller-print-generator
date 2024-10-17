@@ -2,16 +2,16 @@ import './StoryContainer.css';
 import { FaTrashAlt } from "react-icons/fa";
 
 interface Story {
-    id: number; 
+    id: number;
     title: string;
     text: string;
-  }
-  
-  interface StoryContainerProps {
-    stories: Story[]; 
-    setStories: (updatedStories: Story[]) => void; 
-  }
-function StoryContainer({stories, setStories}:StoryContainerProps) {
+}
+
+interface StoryContainerProps {
+    stories: Story[];
+    setStories: (updatedStories: Story[]) => void;
+}
+function StoryContainer({ stories, setStories }: StoryContainerProps) {
 
 
     const deleteStory = (id: number | undefined) => {

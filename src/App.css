@@ -8,7 +8,7 @@
   position: relative;
 }
 
-.main_container-wrapper{
+.main_container-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -33,12 +33,12 @@
 }
 
 .main_title-hot {
- color: #002f00; 
- 
+  color: #002f00;
+
 }
 
 .main_title-cold {
-  color: #000007; 
+  color: #000007;
 }
 
 .themeBtn_container {
@@ -66,26 +66,30 @@
   background-color: #fefefe;
   border: none;
 
-} 
-
-.input-cold, .textarea-cold {
-  box-shadow:inset 0 0 15px 4px #bedbe5;
-  border-radius: 8px;
-  padding: 8px;
-  
 }
 
-.input-cold:focus, .textarea-cold:focus{
+.input-cold,
+.textarea-cold {
+  box-shadow: inset 0 0 15px 4px #bedbe5;
+  border-radius: 8px;
+  padding: 8px;
+
+}
+
+.input-cold:focus,
+.textarea-cold:focus {
   border: 1px solid #0093E9;
   outline: none;
 }
 
-.input-hot, .textarea-hot{
+.input-hot,
+.textarea-hot {
   box-shadow: inset 0 0 15px 2px #ff5e01;
   padding: 4px 8px;
 }
 
-.input-hot:focus, .textarea-hot:focus{
+.input-hot:focus,
+.textarea-hot:focus {
   outline: none;
   border: 1px solid #ff5e00;
 }
@@ -109,14 +113,14 @@
   margin: 8px;
 }
 
-.create_story-cold{
-  box-shadow:inset 0 0 0 4px #bedbe5,
-  0 1px 2px #bedbe5;
+.create_story-cold {
+  box-shadow: inset 0 0 0 4px #bedbe5,
+    0 1px 2px #bedbe5;
   background-color: #ddedf6;
   color: #00070c;
 }
 
-.create_story-hot{
+.create_story-hot {
   box-shadow: inset 0 0 12px #ff5e00;
   background-color: #fbdcca;
   border: 1px solid #622400;
@@ -136,11 +140,11 @@
   box-shadow: inset 0 0 0 1px rgb(176, 176, 176);
 }
 
-.print_container-cold{
+.print_container-cold {
   box-shadow: 0 0 0 4px #bedbe5;
 }
 
-.print_container-hot{
+.print_container-hot {
   box-shadow: 0 0 0 4px #FBAB7E;
 }
 
@@ -160,8 +164,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.lato_font{
+.lato_font {
   font-family: 'Lato', 'Courier New', Courier, monospace;
+}
+
+.metodo_font{
+  font-family: 'metodo', 'arial';
 }
 
 .button_container {
@@ -191,7 +199,7 @@
 
 .button_container-hot {
   background-color: #f9d4b7;
-  box-shadow:inset 0 0 25px 2px #ef5801;
+  box-shadow: inset 0 0 25px 2px #ef5801;
 }
 
 .print_container-button {
@@ -210,16 +218,16 @@
   justify-content: center;
 }
 
-.error-cold{
+.error-cold {
   color: #00002f;
   background-color: #bedbe5;
   padding: 6px;
   border-radius: 8px;
 }
 
-.error-hot{
-   color: red;
-   text-shadow: 1px 1px 1px rgb(212, 210, 210);
+.error-hot {
+  color: red;
+  text-shadow: 1px 1px 1px rgb(212, 210, 210);
 }
 
 .error {
@@ -296,8 +304,7 @@
   .theme_container-wrapper img,
   .button_container-cold,
   .button_container-hot,
-  .error_mensage
-  {
+  .error_mensage {
     display: none;
   }
 

@@ -45,15 +45,15 @@ function App() {
 
     const createStory = () => {
         if (title.length > 0 || text.length > 0) {
-          const newStory = { title, text, id: nextId };
-          setStories([...stories, newStory]);
-          setNextId(nextId + 1);
-          setTitle('');
-          setText('');
+            const newStory = { title, text, id: nextId };
+            setStories([...stories, newStory]);
+            setNextId(nextId + 1);
+            setTitle('');
+            setText('');
         } else {
-          setError(true);
+            setError(true);
         }
-      }
+    }
 
     const handleCapture = () => {
         if (stories.length > 0) {
@@ -91,7 +91,7 @@ function App() {
                             <FontBtn text='times' icon={timessvg} />
                             <FontBtn text='courier' icon={courierSvg} />
                             <FontBtn text='roboto' icon={robotoSvg} />
-                            <FontBtn text='lato' icon={latoSvg} />
+                            <FontBtn text='metodo' icon={latoSvg} />
                         </div> :
                             <div className='print_container-font--wrapper'>
                                 <IconBtn icon={hotface} />
@@ -99,7 +99,7 @@ function App() {
                                 <FontBtn text='times' icon={timesaltsvg} />
                                 <FontBtn text='courier' icon={courierAltSvg} />
                                 <FontBtn text='roboto' icon={robotoAltSvg} />
-                                <FontBtn text='lato' icon={latoAltSvg} />
+                                <FontBtn text='metodo' icon={latoAltSvg} />
                             </div>
                         }
                         <div className='print_container-button--wrapper'>
@@ -107,7 +107,7 @@ function App() {
                             <button className='print_container-button'><MdCleaningServices size={28} onClick={cleanPage} /></button>
                         </div>
                     </div>
-                  <StoryContainer setStories={setStories} stories={stories} />
+                    <StoryContainer setStories={setStories} stories={stories} />
                 </div>
             </div>
         </main>
